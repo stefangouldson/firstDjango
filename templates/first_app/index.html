@@ -11,11 +11,29 @@
 <body>
 
     <h1>Helo this is the Index page in the templates</h1>
-    {{ insert_me }}
+    <h2>Django level two- here is the access records</h2>
 
-    <h1>This the best driver in mario kart</h1>
-    <img src="{% static 'images/luigi.jpg' %}" alt="error">
-
+    <div class="djangtwo">
+    {% if access_records %}
+        <table>
+        <thead>
+            <th>Site Name</th>
+            <th>Date Accessed</th>
+        </thead>
     
+
+    {% for acc in access_records %}
+        <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.date }}</td>
+        </tr>
+    {% endfor %}
+        </table>
+    {% else %}
+        <p>NO ACCESS RECORDS FOUND</p>
+    {% endif %}
+</div>
+
+
 </body>
 </html>
