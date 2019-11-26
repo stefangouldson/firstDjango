@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends "first_app/base.html" %}
+    {% block body_block %}
+    
+    <h1>URL PAGE</h1>
+    <a href="{% url 'index' %}">Index Page</a>
+    <br>
+    <a href="{% url 'first_app:other' %}">The Other Page</a>
+    <br>
+    <a href="{% url 'admin:index' %}">Admin Page</a>
+{% endblock %}
